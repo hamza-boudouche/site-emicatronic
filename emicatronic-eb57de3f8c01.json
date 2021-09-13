@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "emicatronic",
+  "private_key_id": "eb57de3f8c01bce38958b332e7d2f2c234ef7a15",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDYLKrnLNRWe92P\nFUvoZtzof5Z5v2Y4cEiQbWOxu/dZ7+T/NTlJSkIjdSHAzy2uK6Ke3AuwW4Ks73ri\nU3FGvyfxuAhrzI4K9R3U13Yl4x/UxTYDXc1+Y6GxQgdsBGPBY2vOTozA+SOCA+b/\nezCatCfLuqJVtD3Oh8IF/fM8C197Q/gEeFPBTDZ6QfNIz7OX3/HhOWx+zgIh+gbx\n412Z1exrs7d2kNlQ4Y9ag+pbcEVOsQb7ttiKj9kqG7B3IzVpiusv9yFKEm2I32/9\nJ41uWohFiayOJFw3x1M3bIpKS8WKh9iK2q0MJdkVGPS9jQSQ2w+/5dcn+WjD9oNA\nKTzmFu8ZAgMBAAECggEAC859u5BK3RnZBxltSslCb7bXNblOyI6WYf/9ec23s9tq\ntQcXxMFX5SaetDCEkM6MjFNdlpFa7N3MBvwyc8AZOwYXfKbAi8fpLBCkAOv7lzP5\nsBuhj3F62WrvK5a+SYfH8a2/2YLJ7g4PQd0dMZfdFA8Skm58kTEAN3JQJHOFEJ7z\nH/nS0W4y5/lOxfX7VmXyyhFyeGC5QoeISrm7Jl957EfPWwXO1ecVEL8bHbAZx62x\nq2eyBBqP9ewuz4E4W1r2vrnwhdu+f739uWrEL/xo2CO04fsYP3CTitBI1StTMuKB\njN9JLla62BZL3jSesqkUb0a23Ik+4TTccTDvXJUKsQKBgQD0L4DFi97AUMnVCBd/\nr0h/ncrEe0fsgJnAoxlWUwfQkHcEttd1s6bLE5zvjv6RXRUKMEkTvu/QNyDZ+/5W\nSPm8BzICqzni/En6rTZ3SRJ5DVRFj9+TCzlxLqKwnUbmcngeG9N4h+NTsmea88ue\nM1IIcR0hYFIAGZG1Vv+3MqaWEQKBgQDioje7v9QELBUSJ8/htDMySWxPrh0uK7ZY\nS3GlgAfZhTLfTO4wyt/ra4kXcIiFNjVpHWa/WO1IJdkEwm4lSvAstHtT+LzIjwi8\nAh5nxxBNnjYraXG/Rl4ynEbil6rvOY3nlwdqeGA5kZCNfRYBy8GBXk+v2kJ0SD/6\ndKL83MagiQKBgEyD9h3wzkQFDLmsZ3CjRFx43WjkGI2LXqJ2eSILso8wNZtMkAdZ\n3BIWez612B9Ew6sFpmCBnDPqkmi8Bd6Tz22T85/Sd7kgxS2/ySlnxFoaSyXhB3XU\nNpO4wVIGdokPpYQJxCIospsvdDeh3VQdUL9EcpRa0lclq/re4BJP1NOBAoGADMAB\nkK93FxD/0nio6lK/+plE3aq2+4z8AjWkXCI6ztL+jK+ASwBu3oi7OrVbCNuG37YG\nvMcc+k0ey3TAy5pOrsUslwnMXSAm5qTb3wzE7wjylTimbJNh40kFd+P+etzrDddi\nVGwXRcXZswwRe+JhrYyHwSXvTSlvaAC91qn5BrkCgYEAz+btgw/pVWcXUvKsp7Ra\nRwabTz8e57YinwYK/8i28em+rcw0TlelIUQvl2J9/kgRaHwwoR597eEEZ1N8auZP\njimc5LVFYWuGdEci1VUpBIRUIHx3L15+LW7tq9IuMi3JZSM35atqioSJunUl2bo9\nZwqJLxfn5RopEEjjb3Vt+2w=\n-----END PRIVATE KEY-----\n",
+  "client_email": "emicatronic-calendar@emicatronic.iam.gserviceaccount.com",
+  "client_id": "110232608671485246348",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/emicatronic-calendar%40emicatronic.iam.gserviceaccount.com"
+}

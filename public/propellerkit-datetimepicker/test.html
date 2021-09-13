@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="">
+<head>
+ 	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="Propeller is a front-end responsive framework based on Material design & Bootstrap.">
+	<meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport">
+    <title>Datetimepicker - Propeller Components</title>
+    
+	<!-- favicon --> 
+	<link rel="icon" href="http://propeller.in/assets/images/favicon.ico" type="image/x-icon">
+	
+	<!-- Bootstrap --> 
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css" rel="stylesheet" /> 
+	
+	<!-- Example docs (CSS for helping component example file)-->
+	<link href="../propellerkit/dist/css/propeller.min.css" type="text/css" rel="stylesheet" />
+
+	<!-- Google Icon Font -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	<!-- Propeller bootstrap datetimepicker -->
+	<link href="css/bootstrap-datetimepicker.css" type="text/css" rel="stylesheet" />
+	
+	<!-- ProDatatable -->
+	<link href="css/pmd-datetimepicker.css" type="text/css" rel="stylesheet"/>
+
+</head>
+
+<body>
+
+<!--Datepicker -->
+<div class="pmd-content pmd-content-custom" id="content"> 
+
+	<div class="container">
+		<!-- Disabled Datepicker -->
+		<section class="row component-section">
+			
+			<!-- Disabled Datepicker title and description -->
+			<div class="col-md-3">
+				<div id="disabled-days">
+					<h2>Disabled Days of the Month</h2>
+					<p> This is a date and time picker which can be used when you want to show few days of the month as disabled. For exmaple: Here, saturdays and sundays are shown as disabled. </p>
+				</div>
+			</div> <!-- Disabled Datepicker title and description end -->
+			
+			<!-- Disabled Datepicker code and example -->
+			<div class="col-md-9"> 
+				<div class="component-box"> 
+					<!-- disabled datepicker example -->
+					<div class="row">
+						<div class="col-md-12"> 
+							<div class="pmd-card pmd-z-depth pmd-card-custom-view">
+								<div class="pmd-card-body"> 
+									<div class="form-group pmd-textfield pmd-textfield-floating-label">
+										<label for="regular1" class="control-label">Select Date and Time</label>
+										<input type="text" id="datepicker-disabled-days" class="form-control" />
+									</div>
+								</div>
+							</div>
+						</div>
+					</div> <!-- disabled datepicker example end -->
+					
+				</div>
+			</div> <!-- Disabled Datepicker code and example end -->
+		</section> <!-- Disabled Datepicker end -->	 
+	</div>
+</div> <!--Datepicker end -->
+
+<!-- jquery JS -->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<!-- Bootstrap js -->
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Textfield js --> 
+<script type="text/javascript" src="../propellerkit/dist/js/propeller.min.js"></script>
+
+<!-- Datepicker moment with locales -->
+<script type="text/javascript" language="javascript" src="../moment/min/moment-with-locales.min.js"></script>
+
+<!-- Propeller Bootstrap datetimepicker -->
+<script type="text/javascript" language="javascript" src="js/bootstrap-datetimepicker.js"></script>
+<script type="text/javascript">
+	$(function () {
+		
+		/* Default date and time picker */
+		$('#datetimepicker-default').datetimepicker({
+			//locale: 'ru'
+			//'format' : "YYYY-MM-DD hh:mm:ss", // HH:mm:ss
+		});
+
+		/* Time picker only */
+		$('#timepicker').datetimepicker({
+			format: 'LT'
+		});
+		
+		/* Linked date and time picker */
+		// start date date and time picker 
+		$('#datepicker-start').datetimepicker();
+
+		// End date date and time picker 
+        $('#datepicker-end').datetimepicker({
+            useCurrent: false 
+        });
+		
+		// start date picke on chagne event [select minimun date for end date datepicker]
+        $("#datepicker-start").on("dp.change", function (e) {
+            $('#datepicker-end').data("DateTimePicker").minDate(e.date);
+        });
+		// Start date picke on chagne event [select maxmimum date for start date datepicker]
+        $("#datepicker-end").on("dp.change", function (e) {
+            $('#datepicker-start').data("DateTimePicker").maxDate(e.date);
+        });
+		
+		// View mode datepicker [shows only years and month]
+		$('#datepicker-view-mode').datetimepicker({
+			viewMode: 'years',
+            format: 'MM/YYYY'
+		});
+		
+		// Disabled Days of the Week (Disable sunday and saturday) [ 0-Sunday, 1-Monday, 2-Tuesday   3-wednesday 4-Thusday 5-Friday 6-Saturday]
+		$('#datepicker-disabled-days').datetimepicker({
+			daysOfWeekDisabled: [0, 6],
+			startDate: "08/11/2021",
+    		endDate: "08/20/2021",
+			disabledDates: [
+				moment("08/25/2021")                        
+            ]
+		});
+		
+		// Inline datepicker
+		$('#datepicker-inline').datetimepicker({
+			inline: true
+		});
+		
+		// Datepicker in popup
+		$('#datepicker-popup-inline').datetimepicker({
+			inline: true
+		});
+		
+		// get date from popup datepicker
+		$("#datepicker-dialog .btn-primary").on("click", function () {
+			$("#datepicker-dialog").modal('hide');
+
+			var datepickerID =  $("[data-datepicker-popup='true']").attr("data-datepicker");
+			var popupDatepickerValue = $("#"+datepickerID).data('date');
+			var elementTagName = $("[data-datepicker-popup='true']").prop("tagName")
+
+			if(elementTagName == "INPUT" || elementTagName == "TEXTAREA"){
+				$("[data-datepicker="+datepickerID+"]").val(popupDatepickerValue);	
+			}else {
+				$("[data-datepicker="+datepickerID+"]").text(popupDatepickerValue);	
+			}
+			
+        });
+		$("[data-header-left='true']").parent().addClass("pmd-navbar-left");
+		// Datepicker left header
+		$('#datepicker-left-header').datetimepicker({
+			'format' : "YYYY-MM-DD HH:mm:ss", // HH:mm:ss
+		});
+		
+	});
+	
+</script>
+
+</body>
+
+</html>

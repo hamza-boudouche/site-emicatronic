@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Join Us</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="../styless.css">
+    <link rel="stylesheet "href="../index.css">
+  <link rel="stylesheet "href="css/datetimepicker.css">	
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  </head>
+
+<body>
+  <div class="row">
+      
+      </div>
+	  <div class='outer-wrapper'>
+      <nav class="  navbar navbar-expand-lg navbar-expand-md navbar-dark justify-content-center">
+        <a class="navbar-brand" href="../index.html">
+          
+		  <h1>O<span style="font-family: 'Righteous';margin-left: 5px;">EMICATRONIC</span></h1> 
+        </a>
+      </nav>
+	   	   	<style>
+	 .jumbotron {
+	 
+    background-image: linear-gradient( rgb(255 255 255 / 80%), rgb(255 255 255 / 100%) ), url(../images/reun.jpg);
+    background-position: center;
+    background-size: cover;
+	 }
+
+	 </style>
+	 <div class="jumbotron jumbotron-fluid bg-light p-4" >
+	 
+    <div class="container">
+      <h1 class="display-4">Join Us !</h1>
+      <p class="lead">Complete the following for a chance to join our club.</p>
+    </div>
+</div>
+	 <div class='body-wrapper'>
+
+<!--- put ur shit here -->
+<div class="col-md-12 p-3"> 
+							
+  <div class="pmd-card pmd-card-custom-view">
+    <div class="pmd-card-body"> 
+      <div class="form-group pmd-textfield pmd-textfield-floating-label">
+        <input type="text" id="fname" placeholder="First Name" name="fname" class="form-control"/><br />
+        <input type="text" placeholder="Last Name" id="lname" name="lname" class="form-control"/><br />
+        <input type="email" placeholder="Email" id="email" name="email" class="form-control"/><br />
+        <div class="input-group">
+          <input type="text" id="datepicker-disabled-days" placeholder ="Select date and time" class="form-control" name="datepicker"/>  
+          <div class="input-group-prepend">
+            <input type="button"  value="Check for time" onclick="submitMeeting()" id="inputGroupPrepend" class="btn btn-dialna"/> 
+          </div>
+          
+        </div>
+        <div id="result" style="margin-top:1rem; margin-bottom:0rem; list-style: none;"></div>
+        <p id="chosenDate">Chosen time: none</p>
+        <br>
+        <select id="genie" name="genie" class="form-control" >
+          <option selected>Genie</option>
+          <option value="informatique">informatique</option>
+          <option value="mecanique">mecanique</option>
+          <option value="electrique">electrique</option>
+          <option value="civil">civil</option>
+          <option value="mis">mis</option>
+          <option value="industriel">industriel</option>
+          <option value="mineral">mineral</option>
+          <option value="procedes industriels">procedes industriels</option>
+        </select><br />
+        <input type="number" placeholder="Telephone" id="telephone" name="telephone" class="form-control"/><br />
+        <select id="cellule" name="cellule" class="form-control" >
+          <option selected>Cellule</option>
+          <option value="projets">projets</option>
+          <option value="technique">technique</option>
+          <option value="developpement informatique">developpement informatique</option>
+          <option value="mediatisation">mediatisation</option>
+          <option value="conception">conception</option>
+          <option value="sponsoring">sponsoring</option>
+          <option value="logistique">logistique</option>
+        </select> <br/>
+        <textarea type="text" id="motivation" placeholder="Motivation" name="motivation" class="form-control" rows="3"></textarea><br />
+        
+      </div>
+<input type="button" value="Send" onclick="submitAll()" class="btn btn-dialna"/>
+<div id="success"></div>
+      <div id="result" class="btn-group" role="group" aria-label="Button group with nested dropdown"></div>
+    </div>
+  </div>
+</div>
+	      </div> 
+	
+<div class="text-center p-3 sponsors" style="position: relative;background-color:#eee;color:#777;">
+<div class="row row-cols-3">
+<div class='col-4'>
+
+<p style="font-size: 12px;text-align:left;"><img src="https://walidmzough.github.io/v6/img/logo.png" style="    float: left;
+    height: 40px;
+    margin: 5px;">
+EMlcatronic est le club de robotique de l'Ecole Mohammadia d'Ingénieurs. Créé en 2009 à l'initiative d'étudiants passionnés de technologies et de robotique, qui voulaient plus, qui cherchaient toujours à voir ce fil fin qui relie théorie et pratique.
+		</p>
+</div>
+<div class='col-4' style="border-left: 1px solid #00000022;">
+	<h5>Nos sponsors</h5> 
+	<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="images\texasinst.png">
+    </div>
+    <div class="carousel-item">
+      <img src="images\cocacola.png">
+    </div>
+    <div class="carousel-item">
+      <img src="images\samsung.png">
+    </div>
+	<div class="carousel-item">
+      <img src="images\github.png">
+    </div>
+  </div>
+</div>
+	</div>
+	<div class='col-4' style="
+    border-left: 1px solid #00000022;
+">
+	<h5>Ils parlent de nous</h5> 
+	<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="images\2m.jpg">
+    </div>
+    <div class="carousel-item">
+      <img src="images\med.jpg">
+    </div>
+    <div class="carousel-item">
+      <img src="images\hit.jpg">
+    </div>
+  </div>
+</div>
+	</div>
+</div>
+</div>
+<div class="text-center p-3" style="position: relative;background-color:#021c4e;color:#fff;font-size: 14px;">
+    Made with <span style="color:#c53131;"><i class="fa fa-heart" aria-hidden="true"></i></span> by WebDevs of <span style="font-family:'Righteous'">EMICATR<i class="fa fa-cog" aria-hidden="true"></i>NIC</span> 2020-2021
+</div>
+</div>
+
+
+      
+<script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+        
+        function plusSlides(n) {
+          showSlides(slideIndex += n);
+        }
+        
+        function currentSlide(n) {
+          showSlides(slideIndex = n);
+        }
+        
+        function showSlides(n) {
+          var i;
+          var slides = document.getElementsByClassName(" mySlides");
+          var dots = document.getElementsByClassName("myBtn");
+          if (n > slides.length) {slideIndex = 1}    
+          if (n < 1) {slideIndex = slides.length}
+          for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";  
+          }
+          for (i = 0; i < dots.length; i++) {
+              dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex-1].style.display = "block";  
+          dots[slideIndex-1].className += " active";
+        }
+        </script>
+
+
+    <!--JavaScript Bundle with Popper -->
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"
+        integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi"
+        crossorigin="anonymous"></script>
+
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<!-- Bootstrap js -->
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Textfield js --> 
+<script type="text/javascript" src="../propellerkit/dist/js/propeller.min.js"></script>
+
+<!-- Datepicker moment with locales -->
+<script type="text/javascript" language="javascript" src="../moment/min/moment-with-locales.min.js"></script>
+
+<!-- Propeller Bootstrap datetimepicker -->
+<script type="text/javascript" language="javascript" src="js/bootstrap-datetimepicker.js"></script>
+<script defer type="text/javascript">
+	let _startDate, _endDate, _disabledDates;
+	document.getElementsByClassName("datepicker-disabled-days").value = null;
+	fetch("http://localhost:5000/initialInfo")
+	  .then((response) => response.json())
+	  .then((data) => {
+		_disabledDates = data.exceptionDates;
+		_minDate = data.startDate;
+		_maxDate = data.endDate;
+		$(function () {
+		  /* Default date and time picker */
+		  $("#datetimepicker-default").datetimepicker({
+			//locale: 'ru'
+			//'format' : "YYYY-MM-DD hh:mm:ss", // HH:mm:ss
+		  });
+
+		  /* Time picker only */
+		  $("#timepicker").datetimepicker({
+			format: "LT",
+		  });
+
+		  /* Linked date and time picker */
+		  // start date date and time picker
+		  $("#datepicker-start").datetimepicker();
+
+		  // End date date and time picker
+		  $("#datepicker-end").datetimepicker({
+			useCurrent: false,
+		  });
+
+		  // start date picke on chagne event [select minimun date for end date datepicker]
+		  $("#datepicker-start").on("dp.change", function (e) {
+			$("#datepicker-end").data("DateTimePicker").minDate(e.date);
+		  });
+		  // Start date picke on chagne event [select maxmimum date for start date datepicker]
+		  $("#datepicker-end").on("dp.change", function (e) {
+			$("#datepicker-start").data("DateTimePicker").maxDate(e.date);
+		  });
+
+		  // View mode datepicker [shows only years and month]
+		  $("#datepicker-view-mode").datetimepicker({
+			viewMode: "years",
+			format: "DD/MM/YYYY",
+		  });
+
+		  // Disabled Days of the Week (Disable sunday and saturday) [ 0-Sunday, 1-Monday, 2-Tuesday   3-wednesday 4-Thusday 5-Friday 6-Saturday]
+		  $("#datepicker-disabled-days").datetimepicker({
+			daysOfWeekDisabled: [0, 6],
+			disabledDates: _disabledDates,
+			minDate: _minDate,
+			maxDate: _maxDate,
+			format: "DD/MM/YYYY",
+		  });
+
+		  // Inline datepicker
+		  $("#datepicker-inline").datetimepicker({
+			inline: true,
+		  });
+
+		  // Datepicker in popup
+		  $("#datepicker-popup-inline").datetimepicker({
+			inline: true,
+		  });
+
+		  // get date from popup datepicker
+		  $("#datepicker-dialog .btn-primary").on("click", function () {
+			$("#datepicker-dialog").modal("hide");
+
+			var datepickerID = $("[data-datepicker-popup='true']").attr(
+			  "data-datepicker"
+			);
+			var popupDatepickerValue = $("#" + datepickerID).data("date");
+			var elementTagName = $("[data-datepicker-popup='true']").prop(
+			  "tagName"
+			);
+
+			if (elementTagName == "INPUT" || elementTagName == "TEXTAREA") {
+			  $("[data-datepicker=" + datepickerID + "]").val(
+				popupDatepickerValue
+			  );
+			} else {
+			  $("[data-datepicker=" + datepickerID + "]").text(
+				popupDatepickerValue
+			  );
+			}
+		  });
+		  $("[data-header-left='true']").parent().addClass("pmd-navbar-left");
+		  // Datepicker left header
+		  $("#datepicker-left-header").datetimepicker({
+			format: "YYYY-MM-DD HH:mm:ss", // HH:mm:ss
+		  });
+		});
+	  });
+	document.getElementsByClassName("datepicker-disabled-days").value = "";
+  </script>
+
+<script defer src="script.js"></script>
+
+</html>
+    
+
+

@@ -1,0 +1,55 @@
+td.day:not(.disabled) {
+cursor:pointer;
+}
+td.day {
+  padding: 5px;
+  text-align: center;
+  font-size: 14px;
+  border-radius: 3px;
+}
+td.day:not(.disabled):hover {
+  background: #eee;
+}
+td.disabled {
+  color: #ccc;
+  cursor: not-allowed;
+}
+.dow {
+  font-size: 14px;
+  text-align: center;
+  color: #fff;
+  background: #021c4e;
+  padding: 5px;
+}
+.prev, .next,.picker-switch {
+  font-size: 14px;
+  background: #021c4e;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+}
+.prev:hover,.next:hover{
+cursor:pointer;
+background:#021c4ecc;
+
+}
+.list-unstyled{
+ margin:0; 
+}
+.dropdown-menu{
+  padding:0;
+}
+.topdateinfo p {
+  margin: 0;
+}
+.yearonly{
+  vertical-align: middle;
+  font-family: 'Righteous';
+  color: #021c4e;
+  text-align: center;
+  font-size: 25px;
+}
+.datetopcol{
+  font-size: 13px;
+  color: #021c4e;
+}

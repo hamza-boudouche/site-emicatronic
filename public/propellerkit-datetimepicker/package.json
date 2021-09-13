@@ -1,0 +1,63 @@
+{
+  "_from": "propellerkit-datetimepicker",
+  "_id": "propellerkit-datetimepicker@1.2.0",
+  "_inBundle": false,
+  "_integrity": "sha1-R4LPKqgYsjIV68wJadyyV44dLvU=",
+  "_location": "/propellerkit-datetimepicker",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "propellerkit-datetimepicker",
+    "name": "propellerkit-datetimepicker",
+    "escapedName": "propellerkit-datetimepicker",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/propellerkit-datetimepicker/-/propellerkit-datetimepicker-1.2.0.tgz",
+  "_shasum": "4782cf2aa818b23215ebcc0969dcb2578e1d2ef5",
+  "_spec": "propellerkit-datetimepicker",
+  "_where": "C:\\Users\\Boudouche Hamza\\Desktop\\test js",
+  "author": {
+    "name": "Digicorp, Inc"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "moment": "^2.9.0",
+    "propellerkit": "*.*.*"
+  },
+  "deprecated": false,
+  "description": "Propeller’s datetimepicker component allows user to select a date from a calendar and time from a visual analog clock; it also accepts values via direct input. We have used Bootstraps’ datetimepicker and applied material design principles to it.",
+  "homepage": "http://propeller.in/",
+  "keywords": [
+    "css",
+    "scss",
+    "js",
+    "material design",
+    "front-end",
+    "framework",
+    "bootstrap",
+    "datepicker",
+    "timepicker",
+    "datetimepicker",
+    "calendar",
+    "moment",
+    "propellerkit"
+  ],
+  "license": "MIT",
+  "main": "js/bootstrap-datetimepicker.js",
+  "name": "propellerkit-datetimepicker",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/digicorp/propeller/tree/master/components/datetimepicker"
+  },
+  "scripts": {
+    "test": "npm install propellerkit-datetimepicker"
+  },
+  "version": "1.2.0"
+}

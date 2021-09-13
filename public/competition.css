@@ -1,0 +1,271 @@
+
+
+
+#cd-timeline h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+h3 {
+  line-height: 40px;
+  font-weight: 600;
+}
+.page-title{
+  line-height: 90px;
+  font-weight: 700;
+}
+.text-center {
+  text-align: center;
+}
+:after, :before {
+  box-sizing: border-box;
+}
+
+ol {
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+}
+
+.myIMG {
+  width: 1500px;
+  height: 550px;
+  filter: brightness(50%);
+}
+.breadcrumb{
+  background: rgba(0, 0, 0, 0.5) !important;
+  width: auto;
+  display: block;
+  font-size: 16px;
+  width: 200px;
+  margin: auto;
+}
+.page-title{
+  font-size: 36px;
+  margin-bottom: 0;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+
+.fade-in {
+  opacity: 0;
+  transition: opacity 250ms ease-in;
+}
+.fade-in.appear {
+  opacity: 1;
+}
+.from-left{
+  transform: translateX(-50%);
+}
+.from-right{
+  transform: translateX(50%);
+}
+
+.from-left,
+.from-right{
+  transition: transform 400ms ease-in;
+}
+.from-left.appear,
+.from-right.appear{
+  transform: translateX(0);
+}
+
+ /*-------------------------------------------------------------------*/
+ .mySlides {
+   display: none;
+  }
+ img {vertical-align: middle;}
+ 
+ /* Slideshow container */
+ .slideshow-container {
+   max-width: 1000px;
+   position: relative;
+   margin: auto;
+ }
+
+  .bac{
+    background-image: url(image1/h.jpg);
+    background-size: cover;
+    background-repeat:no-repeat;
+  }
+
+ 
+ /* Next & previous buttons */
+ .prev, .next {
+   cursor: pointer;
+   position: absolute;
+   top: 50%;
+   width: auto;
+   padding: 16px;
+   margin-top: -22px;
+   color: white;
+   font-weight: bold;
+   font-size: 18px;
+   transition: 0.6s ease;
+   border-radius: 0 3px 3px 0;
+   user-select: none;
+ }
+ .competition-container .btn{
+	     font-size: 16px;
+
+ }
+ .competition-container p {
+ font-size: 12px;}
+ .border{
+   border-radius: 0px;
+   position: relative;
+   top:10px;
+   font-size: 20px;
+   background-color: rgb(0, 0, 0,0.1);
+}
+ .essai{
+  background-color: rgb(0, 0, 0,0.1);
+  
+ }
+ /* Position the "next button" to the right */
+ .next {
+   right: 0;
+   border-radius: 3px 0 0 3px;
+ }
+ .prev {
+  left: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+ .prev:hover, .next:hover {
+  background-color: rgb(0, 0, 0,0.1);
+ }
+
+ 
+ 
+ 
+ .btn{
+   background-color: #021c4e;
+   color:aliceblue;
+ }
+ 
+
+ 
+ 
+
+ 
+.images{
+
+    opacity: 0.9;
+
+}
+.imagesize{
+  top:10px;
+  transition:1s;
+  padding:0px;
+
+}
+@media (max-width :411px)
+{
+  .iimages{
+    width:400px;
+    height: 400px;
+  } 
+    
+}
+
+@media (max-width :411px)
+{
+  .imagesize{
+    width:400px;
+    height: 400px;
+   
+  } 
+    
+}
+.halfpic{
+  position :relative;
+  left:40%;
+  top:-109vh;
+  background-color:#717171;
+  width:600px;
+  height:725px;
+  opacity:0.5;
+
+}
+
+.texte{
+
+  width:400px;
+  position :absolute;
+  left:50%;
+  top:40vh;
+
+  font-size: 20px;
+
+  color:white;
+
+ 
+  display:flex;
+  justify-content: center;
+  align-content: center;
+
+}
+.texte2{
+
+  width:500px;
+  position :absolute;
+  left:50%;
+  top:10vh;
+ }
+ .texte3{
+
+  width:500px;
+  position :absolute;
+  left:50%;
+  top:25vh;
+ }
+ .texte4{
+  width:900px; 
+  
+  position :absolute;
+  left:5%;
+  top:2vh;
+ padding-bottom:20px;
+  
+ }
+.texte1{
+  width: 500px;
+
+}
+
+@media (max-width :411px)
+{
+  .texte{
+
+    position :relative;
+    left:0px;
+    top:0px;
+    
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace ;
+    color:white;
+    opacity: 0.9;
+}
+    
+}
+
+.btn{
+    margin:0px;
+}
+.forground-color1{
+
+    background-color: rgba(10, 50, 100, 0.58);
+    border-radius: 5px;
+    padding: 30px;
+}
+.images:hover{
+    filter:grayscale(50%);
+
+}
+.btntext{
+  background-color: rgb(255, 255, 255,0.2);
+}

@@ -1,0 +1,37 @@
+const redis = require('async-redis')
+
+const writeToCalendarTemp = async (client, candidate, chosenDate) => {
+	const existingValue = await getValue(client, chosenDate)
+	if (existingValue) {
+		return false
+	}
+	await client.set(chosenDate, `${candidate.fname}-${candidate.lname}`, 'EX', 60 * 60);
+	return true
+}
+
+const getValue = async (client, key) => {
+	const existingValue = await client.get(key);
+	return existingValue
+}
+
+const getList = async (client, key) => {
+	const res = await client.lrange(key, 0, -1)
+	return res
+}
+
+// (async () => {
+// 	const redisCredentials = {
+// 		host: process.env.REDIS_HOST,
+// 		port: process.env.REDIS_PORT
+// 	}
+// 	const redisClient = redis.createClient(redisCredentials)
+// 	await redisClient.setAsync('startDate', new Date(2021, 8, 23));
+// 	await redisClient.setAsync('endDate', new Date(2021, 8, 30));
+
+// 	await redisClient.lpushAsync("exceptionDates", new Date(2021, 8, 25))
+// 	await redisClient.lpushAsync("exceptionDates", new Date(2021, 8, 26))
+// 	await redisClient.lpushAsync("exceptionDates", new Date(2021, 8, 27))
+// 	console.log(await redisClient.lrangeAsync("mylist", 0, -1))
+// })()
+
+module.exports = { writeToCalendarTemp, getValue, getList };

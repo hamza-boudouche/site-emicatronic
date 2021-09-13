@@ -1,0 +1,26 @@
+{
+	html form:
+		genie
+		telephone
+		cellule
+		motivation
+	splash screen check your email 
+	verify if server is running 
+}  DONE
+
+implement: 
+	check if available 
+		database
+		cache
+		calendar
+	writeToCalendar
+		googleapis DONE
+	writeToCalendarTemp
+		redis cache
+	sendEmailToCandidate
+		email template DONE
+
+{
+	jwt email verification
+	splash screen operation successfull
+}
