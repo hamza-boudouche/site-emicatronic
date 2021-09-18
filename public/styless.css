@@ -3,6 +3,10 @@
     font-family: 'logo_dialna';
     src: url('icomoon.ttf');
 }
+@font-face {
+  font-family: Righteous;
+  src: url(Armstrong.otf);
+}
 body {
 	background:#e7e7e7;
 	overflow-x:hidden;
@@ -45,9 +49,6 @@ body {
     
         .MultiCarousel .leftLst.over, .MultiCarousel .rightLst.over { pointer-events: none; background:#ccc; }
 .navbar-brand {
-    padding-top: .3125rem;
-    padding-bottom: .3125rem;
-    margin: 0 1rem;
     font-size: 1.25rem;
     text-decoration: none;
     white-space: nowrap;
@@ -98,7 +99,7 @@ content:'...';
 }
 
 .nav-item {
-  font-size: 14px;
+  font-size: 1vw;
     font-family: 'Roboto';
     text-transform: uppercase;
     margin-left: 10px;
@@ -408,33 +409,31 @@ display:none;
     color:#021c4e;
     font-family: fantasy;
     font-size: 30px;
-}/*  
-.img-product{
-    height: 55%;
-    max-height: 100%;
-    z-index: 2;
-    filter: drop-shadow(-1px 22px 15px rgba(0, 0, 0, 0.35));
-    transform: scale(2) rotate(25deg) translate(8px, -20px);
-}
-.stars{
-    font-size: 1.4em;
-    color: #ffd700;
-}
-.price{
-    font-size: 1.5em;
-    text-align: center;
-}
-.colors{
-    width:20px;
-    height:20px;
-    display:inline-block;
-    transition:0.3s all;
-    border-radius:50%;
-    background: #ef8bef; 
-    margin: 0 15px;
 }
 
-.selected{
-    box-shadow: 0 0 0 4px #fff, 0 0 0 8px rgba(173, 173, 170, .3);
+/* MEDIA QUERRIES */
+
+@media (max-width:  1200px){
+	.outer-wrapper{
+		
+		width:90%;
+		
+	}
 }
-*/
+
+@media (max-width:  920px){
+	.outer-wrapper{
+		
+		width:100%;
+		
+	}
+}
+@media (max-width: 576px){
+	.navbar-brand h1 {
+font-size: 20px;	
+	}
+}
+
+
+
+
