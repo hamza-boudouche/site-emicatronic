@@ -1,5 +1,5 @@
 let chosenDate = null;
-const ipAdd = 'http://192.168.1.102:5000';
+const ipAdd = 'https://www.emicatronic.com';
 
 (async () => {
 	try {

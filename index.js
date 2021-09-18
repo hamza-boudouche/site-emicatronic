@@ -4,7 +4,15 @@ const cors = require('cors')
 const morgan = require('morgan')
 const { sendEmailToCandidate } = require('./utility')
 const { writeToCalendar } = require('./googleCalendarApi')
-const { checkIfAvailable, getAvailableDates, writeToDatabase, checkNameEmail } = require('./database')
+const {
+	checkIfAvailable,
+	insertAvailableDate,
+	getAvailableDates,
+	writeToDatabase,
+	checkNameEmail,
+	insertTempEmail,
+	checkEmailTemp
+} = require('./database')
 const { writeToCalendarTemp, getValue, getList } = require('./cache')
 
 const redis = require('async-redis')
@@ -19,9 +27,9 @@ const port = process.env.PORT || 5000
 
 app.use(morgan('dev'))
 const corsOptions = {
-    origin: '*',
-    optionsSuccessStatus: 200,
-  }
+	origin: '*',
+	optionsSuccessStatus: 200,
+}
 app.use(cors(corsOptions));
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
@@ -82,6 +90,10 @@ app.post('/api/conference/', async (req, res) => {
 	if (!nameAndEmailAvailable) {
 		return res.json({ success: false, message: 'either your full name or your email have already been used in another successful application, therfore it can\'t be used more than once' })
 	}
+	const emailTempAvailable = await checkEmailTemp(email)
+	if (!emailTempAvailable) {
+		return res.json({ success: false, message: 'This email has already been used by another candidate in another pending application' })
+	}
 	const isAvailable = await checkIfAvailable(chosenDate)
 	if (!isAvailable) {
 		return res.json({ success: false, message: 'the chosen date is not available anymore' })
@@ -90,8 +102,9 @@ app.post('/api/conference/', async (req, res) => {
 	if (!isAvailableInTempStorage) {
 		return res.json({ success: false, message: 'the chosen date has already been chosen by another candidate but is not yet validated, try again after 30 minutes or pick another date' })
 	}
-	if (isAvailable && isAvailableInTempStorage && nameAndEmailAvailable) {
+	if (isAvailable && isAvailableInTempStorage && nameAndEmailAvailable && emailTempAvailable) {
 		sendEmailToCandidate({ lname, fname, email, genie, telephone, cellule, motivation }, chosenDate)
+		insertTempEmail(email)
 		res.json({ success: true, message: 'check your email' })
 	} else {
 		res.json({ success: false, message: 'internal server error' })
