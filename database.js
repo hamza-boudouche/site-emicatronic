@@ -135,10 +135,38 @@ const checkNameEmail = async (candidate) => {
 	return true
 }
 
+const tempEmailsSchema = new mongoose.Schema({
+	email: String
+})
+
+const TempEmail = mongoose.model('tempemail', tempEmailsSchema)
+
+const insertTempEmail = async (email) => {
+	await connectDB()
+	const newTempEmail = new TempEmail({ email })
+	await newTempEmail.save()
+	await mongoose.disconnect()
+}
+
+const getTempEmails = async () => {
+	await connectDB()
+	const res = await Candidate.find({})
+	await mongoose.disconnect()
+	return res
+}
+
+const checkEmailTemp = async (email) => {
+	let tempEmails = await getTempEmails()
+	tempEmails = tempEmails.map(el => el.email)
+	return !tempEmails.includes(email)
+}
+
 module.exports = {
 	checkIfAvailable,
 	insertAvailableDate,
 	getAvailableDates,
 	writeToDatabase,
-	checkNameEmail
+	checkNameEmail,
+	insertTempEmail,
+	checkEmailTemp
 }

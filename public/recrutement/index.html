@@ -358,7 +358,7 @@
     <script defer type="text/javascript">
       let _startDate, _endDate, _disabledDates;
       document.getElementsByClassName("datepicker-disabled-days").value = null;
-      fetch("https://www.emicatronic.com/initialInfo")
+      fetch("http://localhost:5000/initialInfo")
         .then((response) => response.json())
         .then((data) => {
           _disabledDates = data.exceptionDates;
