@@ -18,11 +18,13 @@ const redisClient = redis.createClient(redisCredentials)
 const port = process.env.PORT || 5000
 
 app.use(morgan('dev'))
+const corsOptions = {
+    origin: '*',
+    optionsSuccessStatus: 200,
+  }
+app.use(cors(corsOptions));
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
-app.use(cors({
-	origin: "*"
-}))
 app.use(express.static(__dirname + '/public'));
 
 app.get('/test', (req, res) => {

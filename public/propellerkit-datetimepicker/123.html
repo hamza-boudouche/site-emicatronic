@@ -212,7 +212,7 @@ EMlcatronic est le club de robotique de l'Ecole Mohammadia d'Ingénieurs. Créé
 <script defer type="text/javascript">
 	let _startDate, _endDate, _disabledDates;
 	document.getElementsByClassName("datepicker-disabled-days").value = null;
-	fetch("http://localhost:5000/initialInfo")
+	fetch("https://www.emicatronic.com/initialInfo")
 	  .then((response) => response.json())
 	  .then((data) => {
 		_disabledDates = data.exceptionDates;
