@@ -5,7 +5,7 @@ const writeToCalendarTemp = async (client, candidate, chosenDate) => {
 	if (existingValue) {
 		return false
 	}
-	await client.set(chosenDate, `${candidate.fname}-${candidate.lname}`, 'EX', 60 * 60);
+	await client.set(chosenDate, `${candidate.fname}-${candidate.lname}`, 'EX', 60 * 30);
 	return true
 }
 
@@ -34,4 +34,14 @@ const getList = async (client, key) => {
 // 	console.log(await redisClient.lrangeAsync("mylist", 0, -1))
 // })()
 
-module.exports = { writeToCalendarTemp, getValue, getList };
+async function setCache() {
+	const redisCredentials = {
+		host: process.env.REDIS_HOST,
+		port: process.env.REDIS_PORT
+	}
+	const redisClient = redis.createClient(redisCredentials)
+	await redisClient.set('startDate', new Date(2021, 8, 22));
+	await redisClient.set('endDate', new Date(2021, 8, 26));
+}
+
+module.exports = { writeToCalendarTemp, getValue, getList, setCache };

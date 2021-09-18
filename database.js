@@ -137,6 +137,7 @@ const checkNameEmail = async (candidate) => {
 
 module.exports = {
 	checkIfAvailable,
+	insertAvailableDate,
 	getAvailableDates,
 	writeToDatabase,
 	checkNameEmail
