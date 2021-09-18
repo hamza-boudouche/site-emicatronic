@@ -1,5 +1,5 @@
 let chosenDate = null;
-const ipAdd = 'http://localhost:5000';
+const ipAdd = 'https://www.emicatronic.com';
 
 (async () => {
 	try {
@@ -61,75 +61,35 @@ const submitAll = async () => {
 	console.log(`name: ${lname} ${fname} -- email ${email} -- meeting-time: ${chosenDate}`)
 
 	if (!fname) {
-		Swal.fire({
-			title: 'Missing info!',
-			text: 'first name is required',
-			icon: 'error',
-			confirmButtonText: 'Fix it'
-		})
+		alert("first name is required")
 		return
 	}
 	if (!lname) {
-		Swal.fire({
-			title: 'Missing info!',
-			text: 'last name is required',
-			icon: 'error',
-			confirmButtonText: 'Fix it'
-		})
+		alert("last name is required")
 		return
 	}
 	if (!email) {
-		Swal.fire({
-			title: 'Missing info!',
-			text: 'email is required',
-			icon: 'error',
-			confirmButtonText: 'Fix it'
-		})
+		alert("email is required")
 		return
 	}
 	if (!chosenDate) {
-		Swal.fire({
-			title: 'Missing info!',
-			text: 'date and time are required',
-			icon: 'error',
-			confirmButtonText: 'Fix it'
-		})
+		alert("date and time are required")
 		return
 	}
-	if (genie === "Genie") {
-		Swal.fire({
-			title: 'Missing info!',
-			text: 'genie is required',
-			icon: 'error',
-			confirmButtonText: 'Fix it'
-		})
+	if (!genie) {
+		alert("genie is required")
 		return
 	}
 	if (!telephone) {
-		Swal.fire({
-			title: 'Missing info!',
-			text: 'telephone is required',
-			icon: 'error',
-			confirmButtonText: 'Fix it'
-		})
+		alert("telephone is required")
 		return
 	}
-	if (cellule === "Cellule") {
-		Swal.fire({
-			title: 'Missing info!',
-			text: 'cellule is required',
-			icon: 'error',
-			confirmButtonText: 'Fix it'
-		})
+	if (!cellule) {
+		alert("cellule is required")
 		return
 	}
 	if (!motivation) {
-		Swal.fire({
-			title: 'Missing info!',
-			text: 'motivation is required',
-			icon: 'error',
-			confirmButtonText: 'Fix it'
-		})
+		alert("motivation is required")
 		return
 	}
 
@@ -152,18 +112,8 @@ const submitAll = async () => {
 
 	const data = await res.json()
 	if (data.success === true) {
-		Swal.fire({
-			title: 'Missing info!',
-			text: 'check your email',
-			icon: 'success',
-			confirmButtonText: 'Cool'
-		})
+		alert("Operation successful, check your email")
 	} else {
-		Swal.fire({
-			title: 'Operation failed',
-			text: data.message,
-			icon: 'error',
-			confirmButtonText: 'Try again'
-		})
+		alert(`Operation failed --- ${data.message}`)
 	}
 }
