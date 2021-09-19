@@ -6,7 +6,12 @@ const ipAdd = 'https://www.emicatronic.com';
 		console.log('here')
 		await fetch(`${ipAdd}/test`)
 	} catch (error) {
-		alert('the server is either unreachable or down, retry another time')
+		Swal.fire({
+			icon: 'error',
+			title: 'Server down',
+			text: 'the server is either unreachable or down, retry another time',
+			footer: '<a href="mailto:emicatronic2.emi@gmail.com">Having touble? Contact us here.</a>'
+		})
 	}
 })();
 
@@ -61,35 +66,75 @@ const submitAll = async () => {
 	console.log(`name: ${lname} ${fname} -- email ${email} -- meeting-time: ${chosenDate}`)
 
 	if (!fname) {
-		alert("first name is required")
+		Swal.fire({
+			icon: 'error',
+			title: 'Missing info',
+			text: 'first name is required',
+			footer: '<a href="mailto:emicatronic2.emi@gmail.com">Having touble? Contact us here.</a>'
+		})
 		return
 	}
 	if (!lname) {
-		alert("last name is required")
+		Swal.fire({
+			icon: 'error',
+			title: 'Missing info',
+			text: 'last name is required',
+			footer: '<a href="mailto:emicatronic2.emi@gmail.com">Having touble? Contact us here.</a>'
+		})
 		return
 	}
 	if (!email) {
-		alert("email is required")
+		Swal.fire({
+			icon: 'error',
+			title: 'Missing info',
+			text: 'email is required',
+			footer: '<a href="mailto:emicatronic2.emi@gmail.com">Having touble? Contact us here.</a>'
+		})
 		return
 	}
 	if (!chosenDate) {
-		alert("date and time are required")
+		Swal.fire({
+			icon: 'error',
+			title: 'Missing info',
+			text: 'date and time are required',
+			footer: '<a href="mailto:emicatronic2.emi@gmail.com">Having touble? Contact us here.</a>'
+		})
 		return
 	}
 	if (!genie) {
-		alert("genie is required")
+		Swal.fire({
+			icon: 'error',
+			title: 'Missing info',
+			text: 'branch is required',
+			footer: '<a href="mailto:emicatronic2.emi@gmail.com">Having touble? Contact us here.</a>'
+		})
 		return
 	}
 	if (!telephone) {
-		alert("telephone is required")
+		Swal.fire({
+			icon: 'error',
+			title: 'Missing info',
+			text: 'phone number is required',
+			footer: '<a href="mailto:emicatronic2.emi@gmail.com">Having touble? Contact us here.</a>'
+		})
 		return
 	}
 	if (!cellule) {
-		alert("cellule is required")
+		Swal.fire({
+			icon: 'error',
+			title: 'Missing info',
+			text: 'team is required',
+			footer: '<a href="mailto:emicatronic2.emi@gmail.com">Having touble? Contact us here.</a>'
+		})
 		return
 	}
 	if (!motivation) {
-		alert("motivation is required")
+		Swal.fire({
+			icon: 'error',
+			title: 'Missing info',
+			text: 'motivation is required',
+			footer: '<a href="mailto:emicatronic2.emi@gmail.com">Having touble? Contact us here.</a>'
+		})
 		return
 	}
 
@@ -112,8 +157,18 @@ const submitAll = async () => {
 
 	const data = await res.json()
 	if (data.success === true) {
-		alert("Operation successful, check your email")
+		Swal.fire({
+			icon: 'success',
+			title: 'Operation successful',
+			text: 'check your email',
+			footer: '<a href="mailto:emicatronic2.emi@gmail.com">Having touble? Contact us here.</a>'
+		})
 	} else {
-		alert(`Operation failed --- ${data.message}`)
+		Swal.fire({
+			icon: 'error',
+			title: 'Operation failed',
+			text: data.message,
+			footer: '<a href="mailto:emicatronic2.emi@gmail.com">Having touble? Contact us here.</a>'
+		})
 	}
 }
