@@ -30,7 +30,7 @@ const template = (candidate, datetime) => {
 
 const template2 = (candidate, datetime) => {
 	const token = jwt.sign({ candidate, datetime }, process.env.SECRET, { expiresIn: '1h' })
-	const link = `${process.env.SERVER_ADRESS}api/verify/${token}`
+	const link = `https://www.emicatronic.com/api/verify/${token}`
 	return `<!DOCTYPE html>
 	<html lang="en">
 	<head>
