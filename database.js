@@ -150,14 +150,18 @@ const insertTempEmail = async (email) => {
 
 const getTempEmails = async () => {
 	await connectDB()
-	const res = await Candidate.find({})
+	const res = await TempEmail.find({})
 	await mongoose.disconnect()
 	return res
 }
 
 const checkEmailTemp = async (email) => {
 	let tempEmails = await getTempEmails()
+	console.log(tempEmails)
 	tempEmails = tempEmails.map(el => el.email)
+	console.log(tempEmails)
+	console.log(email)
+	console.log(`the requested email is ${email} -- ${!tempEmails.includes(email)}`)
 	return !tempEmails.includes(email)
 }
 
