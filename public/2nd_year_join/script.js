@@ -41,7 +41,8 @@ const submitMeeting = async () => {
 		ul.appendChild(li);
 		console.log(new Date(interval).getHours())
 		//const hours = interval.getHours()
-		li.innerHTML += `<input type="button" id="${interval}" value="${new Date(interval).getHours() - 1} : ${new Date(interval).getMinutes()}" onclick="submitTime(this)" class="btn btn-primary btn-dialna"/>`
+		const minutes = new Date(interval).getMinutes() != 0 ? new Date(interval).getMinutes() : ((new Date(interval).getMinutes()) + "0")
+		li.innerHTML += `<input type="button" id="${interval}" value="${new Date(interval).getHours() - 1} : ${minutes}" onclick="submitTime(this)" class="btn btn-primary btn-dialna"/>`
 	});
 }
 
@@ -49,7 +50,12 @@ const submitTime = async (el) => {
 	const value = el.id;
 	console.log(`button with value ${value} was pressed`)
 	chosenDate = value
-	document.getElementById('chosenDate').innerHTML = `Chosen date: ${chosenDate.toString()}`
+	console.log(chosenDate)
+	const chosenDateDate = `${new Date(chosenDate).getFullYear()}/${new Date(chosenDate).getMonth() + 1}/${new Date(chosenDate).getDate()}`
+	const minutes = new Date(chosenDate).getMinutes() != 0 ? new Date(chosenDate).getMinutes() : ((new Date(chosenDate).getMinutes()) + "0")
+	const chosenDateTime = `${new Date(chosenDate).getHours() - 1}:${minutes}`
+	document.getElementById('chosenDateDate').innerHTML = chosenDateDate
+	document.getElementById('chosenDateTime').innerHTML = chosenDateTime
 }
 
 const submitAll = async () => {
@@ -63,76 +69,76 @@ const submitAll = async () => {
 	const cellule = document.getElementById('cellule').value
 	const motivation = document.getElementById('motivation').value
 
-	console.log(`name: ${lname} ${fname} -- email ${email} -- meeting-time: ${chosenDate}`)
+	console.log(`name: ${lname} ${fname} --email ${email} --meeting - time: ${chosenDate} `)
 
 	if (!fname) {
 		Swal.fire({
-			icon: 'error',
+			icon: 'Error',
 			title: 'Missing info',
-			text: 'first name is required',
+			text: 'First name is required',
 			footer: '<a href="mailto:emicatronic2.emi@gmail.com">Having touble? Contact us here.</a>'
 		})
 		return
 	}
 	if (!lname) {
 		Swal.fire({
-			icon: 'error',
+			icon: 'Error',
 			title: 'Missing info',
-			text: 'last name is required',
+			text: 'Last name is required',
 			footer: '<a href="mailto:emicatronic2.emi@gmail.com">Having touble? Contact us here.</a>'
 		})
 		return
 	}
 	if (!email) {
 		Swal.fire({
-			icon: 'error',
+			icon: 'Error',
 			title: 'Missing info',
-			text: 'email is required',
+			text: 'Email is required',
 			footer: '<a href="mailto:emicatronic2.emi@gmail.com">Having touble? Contact us here.</a>'
 		})
 		return
 	}
 	if (!chosenDate) {
 		Swal.fire({
-			icon: 'error',
+			icon: 'Error',
 			title: 'Missing info',
-			text: 'date and time are required',
+			text: 'Date and time are required',
 			footer: '<a href="mailto:emicatronic2.emi@gmail.com">Having touble? Contact us here.</a>'
 		})
 		return
 	}
 	if (!genie) {
 		Swal.fire({
-			icon: 'error',
+			icon: 'Error',
 			title: 'Missing info',
-			text: 'branch is required',
+			text: 'Branch is required',
 			footer: '<a href="mailto:emicatronic2.emi@gmail.com">Having touble? Contact us here.</a>'
 		})
 		return
 	}
 	if (!telephone) {
 		Swal.fire({
-			icon: 'error',
+			icon: 'Error',
 			title: 'Missing info',
-			text: 'phone number is required',
+			text: 'Phone number is required',
 			footer: '<a href="mailto:emicatronic2.emi@gmail.com">Having touble? Contact us here.</a>'
 		})
 		return
 	}
 	if (!cellule) {
 		Swal.fire({
-			icon: 'error',
+			icon: 'Error',
 			title: 'Missing info',
-			text: 'team is required',
+			text: 'Team is required',
 			footer: '<a href="mailto:emicatronic2.emi@gmail.com">Having touble? Contact us here.</a>'
 		})
 		return
 	}
 	if (!motivation) {
 		Swal.fire({
-			icon: 'error',
+			icon: 'Error',
 			title: 'Missing info',
-			text: 'motivation is required',
+			text: 'Motivation is required',
 			footer: '<a href="mailto:emicatronic2.emi@gmail.com">Having touble? Contact us here.</a>'
 		})
 		return
@@ -149,7 +155,7 @@ const submitAll = async () => {
 		motivation
 	}
 
-	const res = await fetch(`${ipAdd}/api/conference/`, {
+	const res = await fetch(`${ipAdd} /api/conference / `, {
 		method: "POST",
 		body: JSON.stringify(body),
 		headers: { "Content-type": "application/json; charset=UTF-8" }
@@ -158,14 +164,14 @@ const submitAll = async () => {
 	const data = await res.json()
 	if (data.success === true) {
 		Swal.fire({
-			icon: 'success',
+			icon: 'Success',
 			title: 'Operation successful',
-			text: 'check your email',
+			text: 'Check your email',
 			footer: '<a href="mailto:emicatronic2.emi@gmail.com">Having touble? Contact us here.</a>'
 		})
 	} else {
 		Swal.fire({
-			icon: 'error',
+			icon: 'Error',
 			title: 'Operation failed',
 			text: data.message,
 			footer: '<a href="mailto:emicatronic2.emi@gmail.com">Having touble? Contact us here.</a>'

@@ -88,7 +88,7 @@ app.post('/api/conference/', async (req, res) => {
 	// && checkCalendar(chosenDate)
 	const nameAndEmailAvailable = await checkNameEmail({ lname, fname, email })
 	if (!nameAndEmailAvailable) {
-		return res.json({ success: false, message: 'either your full name or your email have already been used in another successful application, therfore it can\'t be used more than once' })
+		return res.json({ success: false, message: 'Either your full name or your email have already been used in another successful application, therfore it can\'t be used more than once' })
 	}
 	const emailTempAvailable = await checkEmailTemp(email)
 	if (!emailTempAvailable) {
@@ -96,11 +96,11 @@ app.post('/api/conference/', async (req, res) => {
 	}
 	const isAvailable = await checkIfAvailable(chosenDate)
 	if (!isAvailable) {
-		return res.json({ success: false, message: 'the chosen date is not available anymore' })
+		return res.json({ success: false, message: 'The chosen date is not available anymore' })
 	}
 	const isAvailableInTempStorage = await writeToCalendarTemp(redisClient, { lname, fname }, chosenDate)
 	if (!isAvailableInTempStorage) {
-		return res.json({ success: false, message: 'the chosen date has already been chosen by another candidate but is not yet validated, try again after 30 minutes or pick another date' })
+		return res.json({ success: false, message: 'The chosen date has already been chosen by another candidate but is not yet validated, try again after 30 minutes or pick another date' })
 	}
 	if (isAvailable && isAvailableInTempStorage && nameAndEmailAvailable && emailTempAvailable) {
 		sendEmailToCandidate({ lname, fname, email, genie, telephone, cellule, motivation }, chosenDate)

@@ -104,7 +104,11 @@ const wrapper = async (candidate, dateRaw) => {
 
 	const event = {
 		summary: `Recrutement EMIcatronic`,
-		description: `<h3>Bonjour${candidate.fname}</h3><br/><p>${candidate.email}</p>`,
+		description: `<h3>${candidate.fname} ${candidate.lname}</h3>
+		<br/>
+		<p>email: ${candidate.email}</p>
+		<p>genie: ${candidate.genie}</p>
+		<p>cellule: ${candidate.cellule}</p>`,
 		start: {
 			'dateTime': dateTime['start'],
 			'timeZone': 'UTC+1'
