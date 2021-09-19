@@ -32,17 +32,12 @@ const submitMeeting = async () => {
 	// show results
 	const resultContainer = document.getElementById('result')
 	resultContainer.innerHTML = ''
-	ul = document.createElement('ul');
-	resultContainer.appendChild(ul);
 	console.log(data.intervals)
 	data.intervals.forEach((interval) => {
-		let li = document.createElement('li');
-		li.style.cssText = 'display:inline; margin-right:0.5rem'
-		ul.appendChild(li);
 		console.log(new Date(interval).getHours())
 		//const hours = interval.getHours()
 		const minutes = new Date(interval).getMinutes() != 0 ? new Date(interval).getMinutes() : ((new Date(interval).getMinutes()) + "0")
-		li.innerHTML += `<input type="button" id="${interval}" value="${new Date(interval).getHours() - 1} : ${minutes}" onclick="submitTime(this)" class="btn btn-primary btn-dialna"/>`
+		resultContainer.innerHTML += `<input type="button" id="${interval}" value="${new Date(interval).getHours() - 1} : ${minutes}" onclick="submitTime(this)" class="btn btn-dialna"/>`
 	});
 }
 
@@ -54,8 +49,8 @@ const submitTime = async (el) => {
 	const chosenDateDate = `${new Date(chosenDate).getFullYear()}/${new Date(chosenDate).getMonth() + 1}/${new Date(chosenDate).getDate()}`
 	const minutes = new Date(chosenDate).getMinutes() != 0 ? new Date(chosenDate).getMinutes() : ((new Date(chosenDate).getMinutes()) + "0")
 	const chosenDateTime = `${new Date(chosenDate).getHours() - 1}:${minutes}`
-	document.getElementById('chosenDateDate').innerHTML = chosenDateDate
-	document.getElementById('chosenDateTime').innerHTML = chosenDateTime
+	document.getElementById('chosenDateDate').innerHTML = '<span class="pre_coor">You will be interviewed on :</span><br>' + chosenDateDate
+	document.getElementById('chosenDateTime').innerHTML = '<span class="pre_coor">At :</span><br>' + chosenDateTime
 }
 
 const submitAll = async () => {
@@ -155,7 +150,7 @@ const submitAll = async () => {
 		motivation
 	}
 
-	const res = await fetch(`${ipAdd} /api/conference / `, {
+	const res = await fetch(`${ipAdd}/api/conference/`, {
 		method: "POST",
 		body: JSON.stringify(body),
 		headers: { "Content-type": "application/json; charset=UTF-8" }
