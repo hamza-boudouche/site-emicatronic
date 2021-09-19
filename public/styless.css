@@ -27,6 +27,16 @@ body {
     background-color: #021c4e;
     border-color: #021c4eaa;
 }
+.btn-dialna-outline {
+    color: #fff;
+    background-color: #021c4e;
+    border: 2px solid #fff;
+}
+.btn-dialna-outline:hover {
+    color: #021c4e;
+    background-color: #fff;
+    border: 2px solid #fff;
+}
 .btn-dialna:hover {color:#fff;}
 .btn-dialna:focus {
     outline: 0;
@@ -433,7 +443,22 @@ display:none;
 font-size: 20px;	
 	}
 }
-
-
+/*CSS FOR JOIN PAGE */
+.pre_coor {
+    font-size: 12px;
+    color: #666;
+}
+#result .btn-dialna:hover {
+    background-color: white !important;
+    color: #021c4e !important;
+} 
+.text-dialna {
+	color: #021c4e !important;
+}
+.swal2-confirm {
+    color: #fff !important;
+    background-color: #021c4e !important;
+    border-color: #021c4eaa !important;
+}
 
 
