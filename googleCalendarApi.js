@@ -19,7 +19,7 @@ const dateTimeForCalander = ({ _year, _month, _day, _hour, _minute, _second }) =
 	date.setFullYear(_year)
 	date.setMonth(_month - 1)
 	date.setDate(_day)
-	date.setHours(_hour)
+	date.setHours(_hour + 1)
 	date.setMinutes(_minute)
 	date.setSeconds(_second)
 
