@@ -131,28 +131,28 @@ const template3 = (candidate, datetime) => {
 <table class="table table-sm text-center">
   <tbody>
     <tr>
-      <td style='background:#021c4e;color:white;font-weight:bold;'>Full Name</td>
-      <td>${candidate.lname} ${candidate.fname}</td>
+      <td style='background:#021c4e;color:white;font-weight:bold;padding:5px 10px;'>Full Name</td>
+      <td style="padding:5px 10px;">${candidate.lname} ${candidate.fname}</td>
     </tr>
 	<tr>
-      <td style='background:#021c4e;color:white;font-weight:bold;'>Email</td>
-      <td>${candidate.email}</td>
+      <td style='background:#021c4e;color:white;font-weight:bold;padding:5px 10px;'>Email</td>
+      <td style="padding:5px 10px;">${candidate.email}</td>
     </tr>
 	<tr>
-      <td style='background:#021c4e;color:white;font-weight:bold;'>Branch</td>
-      <td>${candidate.genie}</td>
+      <td style='background:#021c4e;color:white;font-weight:bold;padding:5px 10px;'>Branch</td>
+      <td style="padding:5px 10px;">${candidate.genie}</td>
     </tr>
 	<tr>
-      <td style='background:#021c4e;color:white;font-weight:bold;'>Phone Number</td>
-      <td>${candidate.telephone}</td>
+      <td style='background:#021c4e;color:white;font-weight:bold;padding:5px 10px;'>Phone Number</td>
+      <td style="padding:5px 10px;">${candidate.telephone}</td>
     </tr>
 	<tr>
-      <td style='background:#021c4e;color:white;font-weight:bold;'>Interview's Time & Date</td>
-      <td>${chosenDateDate} at ${chosenDateTime}</td>
+      <td style='background:#021c4e;color:white;font-weight:bold;padding:5px 10px;'>Interview's Time & Date</td>
+      <td style="padding:5px 10px;">${chosenDateDate} at ${chosenDateTime}</td>
     </tr>
 	<tr>
-      <td style='background:#021c4e;color:white;font-weight:bold;'>Chosen Team</td>
-      <td>${candidate.cellule}</td>
+      <td style='background:#021c4e;color:white;font-weight:bold;padding:5px 10px;'>Chosen Team</td>
+      <td style="padding:5px 10px;">${candidate.cellule}</td>
     </tr>
   </tbody>
 </table>
@@ -165,5 +165,8 @@ const template3 = (candidate, datetime) => {
 
 </html>`)
 }
+
+
+
 
 module.exports = { sendEmailToCandidate }
