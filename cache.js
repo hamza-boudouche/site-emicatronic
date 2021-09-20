@@ -40,8 +40,8 @@ async function setCache() {
 		port: process.env.REDIS_PORT
 	}
 	const redisClient = redis.createClient(redisCredentials)
-	await redisClient.set('startDate', new Date(2021, 8, 22));
-	await redisClient.set('endDate', new Date(2021, 8, 26));
+	await redisClient.set('startDate', new Date(2021, 8, 23));
+	await redisClient.set('endDate', new Date(2021, 8, 27));
 }
 
 module.exports = { writeToCalendarTemp, getValue, getList, setCache };
