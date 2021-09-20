@@ -109,7 +109,7 @@ const template3 = (candidate, datetime) => {
 	const chosenDateDate = `${new Date(chosenDate).getFullYear()}/${new Date(chosenDate).getMonth() + 1}/${new Date(chosenDate).getDate()}`
 	const minutes = new Date(chosenDate).getMinutes() != 0 ? new Date(chosenDate).getMinutes() : ((new Date(chosenDate).getMinutes()) + "0")
 	const chosenDateTime = `${new Date(chosenDate).getHours() - 1}:${minutes}`
-	return `<!DOCTYPE html>
+	return (`<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -159,11 +159,11 @@ const template3 = (candidate, datetime) => {
 <br>
 <p class="text-left"> There is one more step to complete this process which is confirming your mail, it can be done by clicking the button bellow : </p>
 <br>
-<a href=`${link}`><img src="https://i.imgur.com/F3gvfU2.png" style="width: 20%;" onclick="window.open(${link});"></a>
+<a href=${link}><img src="https://i.imgur.com/F3gvfU2.png" style="width: 20%;"></a>
 </div>
 </body>
 
-</html>`
+</html>`)
 }
 
 module.exports = { sendEmailToCandidate }
