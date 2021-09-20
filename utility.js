@@ -159,7 +159,7 @@ const template3 = (candidate, datetime) => {
 <br>
 <p class="text-left"> There is one more step to complete this process which is confirming your mail, it can be done by clicking the button bellow : </p>
 <br>
-<a href=${link}><img src="https://i.imgur.com/F3gvfU2.png" style="width: 20%;"></a>
+<a href=${link}><img src="https://i.imgur.com/F3gvfU2.png" alt="click here" style="width: 20%;"></a>
 </div>
 </body>
 
