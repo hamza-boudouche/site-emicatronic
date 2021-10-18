@@ -172,7 +172,7 @@ const submitAll = async () => {
 		Swal.fire({
 			icon: 'success',
 			title: 'Operation successful',
-			text: 'You have successfully completed the first part of the registration process. Don\'t forget to <b>check</b> your email and validate it by clicking on the validation link (expires in 30 minutes)',
+			text: 'You have successfully completed the first part of the registration process. Don\'t forget to check your email and validate it by clicking on the validation link (expires in 30 minutes)',
 			footer: '<a href="mailto:emicatronic2.emi@gmail.com">Having touble? Contact us here.</a>'
 		})
 	} else {
