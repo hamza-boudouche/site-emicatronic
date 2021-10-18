@@ -37,7 +37,7 @@ const submitMeeting = async () => {
 		console.log(new Date(interval).getHours())
 		//const hours = interval.getHours()
 		const minutes = new Date(interval).getMinutes() != 0 ? new Date(interval).getMinutes() : ((new Date(interval).getMinutes()) + "0")
-		resultContainer.innerHTML += `<div class="col-4 col-md-2 mb-2"><input type="button" id="${interval}" value="${new Date(interval).getHours() - 1} : ${minutes}" onclick="submitTime(this)" class="btn btn-dialna w-100"/></div>`
+		resultContainer.innerHTML += `<div class="col-4 col-md-2 mb-2"><input type="button" id="${interval}" value="${new Date(interval).getHours() == 0 ? 23 : new Date(interval).getHours() - 1} : ${minutes}" onclick="submitTime(this)" class="btn btn-dialna w-100"/></div>`
 	});
 }
 

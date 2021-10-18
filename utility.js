@@ -29,7 +29,7 @@ const template3 = (candidate, datetime) => {
 	const chosenDate = datetime
 	const chosenDateDate = `${new Date(chosenDate).getFullYear()}/${new Date(chosenDate).getMonth() + 1}/${new Date(chosenDate).getDate()}`
 	const minutes = new Date(chosenDate).getMinutes() != 0 ? new Date(chosenDate).getMinutes() : ((new Date(chosenDate).getMinutes()) + "0")
-	const chosenDateTime = `${new Date(chosenDate).getHours() - 1}:${minutes}`
+	const chosenDateTime = `${new Date(chosenDate).getHours()}:${minutes}`
 	return (`<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -68,7 +68,7 @@ const template3 = (candidate, datetime) => {
     </tr>
 	<tr>
       <td style='background:#021c4e;color:white;font-weight:bold;padding:5px 10px;'>Interview's Time & Date</td>
-      <td style="padding:5px 10px;">${chosenDateDate} at ${chosenDateTime.setHours(chosenDateTime.getHours() + 1)}</td>
+      <td style="padding:5px 10px;">${chosenDateDate} at ${chosenDateTime}</td>
     </tr>
 	<tr>
       <td style='background:#021c4e;color:white;font-weight:bold;padding:5px 10px;'>Chosen Team</td>
