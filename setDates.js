@@ -4,39 +4,41 @@ const { setCache } = require("./cache");
 setCache();
 
 (async () => {
-	//jeudi
-	await insertAvailableDate(new Date(2021, 8, 23, 13, 0))
-	await insertAvailableDate(new Date(2021, 8, 23, 13, 15))
-	await insertAvailableDate(new Date(2021, 8, 23, 19, 00))
-	await insertAvailableDate(new Date(2021, 8, 23, 19, 15))
-	await insertAvailableDate(new Date(2021, 8, 23, 21, 0))
-	await insertAvailableDate(new Date(2021, 8, 23, 21, 15))
 	//vendredi
-	await insertAvailableDate(new Date(2021, 8, 24, 13, 0))
-	await insertAvailableDate(new Date(2021, 8, 24, 13, 15))
-	await insertAvailableDate(new Date(2021, 8, 24, 19, 00))
-	await insertAvailableDate(new Date(2021, 8, 24, 19, 15))
-	await insertAvailableDate(new Date(2021, 8, 24, 21, 0))
-	await insertAvailableDate(new Date(2021, 8, 24, 21, 15))
+	for (let i = 19; i <= 23; i++) {
+		await insertAvailableDate(new Date(2021, 10, 22, i, 0))
+		await insertAvailableDate(new Date(2021, 10, 22, i, 15))
+		await insertAvailableDate(new Date(2021, 10, 22, i, 30))
+		await insertAvailableDate(new Date(2021, 10, 22, i, 45))
+	}
+
 	//samedi
-	await insertAvailableDate(new Date(2021, 8, 25, 13, 0))
-	await insertAvailableDate(new Date(2021, 8, 25, 13, 15))
-	await insertAvailableDate(new Date(2021, 8, 25, 19, 00))
-	await insertAvailableDate(new Date(2021, 8, 25, 19, 15))
-	await insertAvailableDate(new Date(2021, 8, 25, 21, 0))
-	await insertAvailableDate(new Date(2021, 8, 25, 21, 15))
+	for (let i = 10; i <= 12; i++) {
+		await insertAvailableDate(new Date(2021, 10, 23, i, 0))
+		await insertAvailableDate(new Date(2021, 10, 23, i, 15))
+		await insertAvailableDate(new Date(2021, 10, 23, i, 30))
+		await insertAvailableDate(new Date(2021, 10, 23, i, 45))
+	}
+
+	for (let i = 14; i <= 18; i++) {
+		await insertAvailableDate(new Date(2021, 10, 23, i, 0))
+		await insertAvailableDate(new Date(2021, 10, 23, i, 15))
+		await insertAvailableDate(new Date(2021, 10, 23, i, 30))
+		await insertAvailableDate(new Date(2021, 10, 23, i, 45))
+	}
+
 	//dimanche
-	await insertAvailableDate(new Date(2021, 8, 26, 13, 0))
-	await insertAvailableDate(new Date(2021, 8, 26, 13, 15))
-	await insertAvailableDate(new Date(2021, 8, 26, 19, 00))
-	await insertAvailableDate(new Date(2021, 8, 26, 19, 15))
-	await insertAvailableDate(new Date(2021, 8, 26, 21, 0))
-	await insertAvailableDate(new Date(2021, 8, 26, 21, 15))
-	//lundi
-	await insertAvailableDate(new Date(2021, 8, 27, 13, 0))
-	await insertAvailableDate(new Date(2021, 8, 27, 13, 15))
-	await insertAvailableDate(new Date(2021, 8, 27, 19, 00))
-	await insertAvailableDate(new Date(2021, 8, 27, 19, 15))
-	await insertAvailableDate(new Date(2021, 8, 27, 21, 0))
-	await insertAvailableDate(new Date(2021, 8, 27, 21, 15))
+	for (let i = 10; i <= 12; i++) {
+		await insertAvailableDate(new Date(2021, 10, 24, i, 0))
+		await insertAvailableDate(new Date(2021, 10, 24, i, 15))
+		await insertAvailableDate(new Date(2021, 10, 24, i, 30))
+		await insertAvailableDate(new Date(2021, 10, 24, i, 45))
+	}
+
+	for (let i = 14; i <= 18; i++) {
+		await insertAvailableDate(new Date(2021, 10, 24, i, 0))
+		await insertAvailableDate(new Date(2021, 10, 24, i, 15))
+		await insertAvailableDate(new Date(2021, 10, 24, i, 30))
+		await insertAvailableDate(new Date(2021, 10, 24, i, 45))
+	}
 })()

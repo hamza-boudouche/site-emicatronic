@@ -98,18 +98,26 @@
                 /><br />
                 <select id="genie" name="genie" class="form-select">
                   <option selected>Branch</option>
-                  <option value="informatique">
+                  <option value="Computer Science Engineering">
                     Computer Science Engineering
                   </option>
-                  <option value="mecanique">Mechanical Engineering</option>
-                  <option value="electrique">Electrical Engineering</option>
-                  <option value="civil">Civil Engineering</option>
-                  <option value="mis">
+                  <option value="Mechanical Engineering">
+                    Mechanical Engineering
+                  </option>
+                  <option value="Electrical Engineering">
+                    Electrical Engineering
+                  </option>
+                  <option value="Civil Engineering">Civil Engineering</option>
+                  <option value="Scientific Computing Engineering (MIS)">
                     Scientific Computing Engineering (MIS)
                   </option>
-                  <option value="industriel">Industrial Engineering</option>
-                  <option value="mineral">Mineral Engineering</option>
-                  <option value="procedes industriels">
+                  <option value="Industrial Engineering">
+                    Industrial Engineering
+                  </option>
+                  <option value="Mineral Engineering">
+                    Mineral Engineering
+                  </option>
+                  <option value="Industrial Processes Engineering (G.Procédés)">
                     Industrial Processes Engineering (G.Procédés)
                   </option></select
                 ><br />
@@ -121,25 +129,42 @@
                   class="form-control"
                 /><br />
                 <select id="cellule" name="cellule" class="form-select">
-                  <option selected>What team would you like to join ?</option>
-                  <option value="projets">Project</option>
-                  <option value="technique">Technical</option>
-                  <option value="developpement informatique">
+                  <option selected>First choice of a team to join</option>
+                  <option value="Project">Project</option>
+                  <option value="Technical">Technical</option>
+                  <option value="Computer Engineering">
                     Computer Engineering
                   </option>
-                  <option value="mediatisation">Media</option>
-                  <option value="conception">Conception</option>
-                  <option value="sponsoring">Sponsoring</option>
-                  <option value="logistique">Logistics/Human Ressources</option>
+                  <option value="Media">Media</option>
+                  <option value="Conception">Conception</option>
+                  <option value="Sponsoring">Sponsoring</option>
+                  <option value="Logistics/Human Ressources">
+                    Logistics/Human Ressources
+                  </option>
+                </select>
+                <br />
+                <select id="cellule1" name="cellule1" class="form-select">
+                  <option selected>Second choice of a team to join</option>
+                  <option value="Project">Project</option>
+                  <option value="Technical">Technical</option>
+                  <option value="Computer Engineering">
+                    Computer Engineering
+                  </option>
+                  <option value="Media">Media</option>
+                  <option value="Conception">Conception</option>
+                  <option value="Sponsoring">Sponsoring</option>
+                  <option value="Logistics/Human Ressources">
+                    Logistics/Human Ressources
+                  </option>
                 </select>
                 <br />
                 <textarea
                   type="text"
                   id="motivation"
-                  placeholder="Motivations"
+                  placeholder="Motivations (be very specific! what are the reasons you want to join EMICATRONIC and why did you pick that specific team?)"
                   name="motivation"
                   class="form-control"
-                  rows="3"
+                  rows="4"
                 ></textarea
                 ><br />
                 <div class="input-group">
@@ -149,6 +174,7 @@
                     placeholder="Select date and time"
                     class="form-control"
                     name="datepicker"
+                    onchange="alert('hee')"
                   />
                   <div class="input-group-prepend">
                     <input
@@ -167,7 +193,7 @@
                     margin-bottom: 0rem;
                     list-style: none;
                   "
-				  class='row'
+                  class="row"
                 ></div>
                 <div id="chosenDate" class="row mb-3">
                   <p id="chosenDateDate" class="col-6 m-0"></p>

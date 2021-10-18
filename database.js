@@ -43,7 +43,7 @@ const getCandidate = async (filter) => {
 
 const checkIfAvailable = async (datetime) => {
 	await connectDB()
-	const res = await Candidate.find({ interviewDate: datetime })
+	const res = await Candidate.find({ interviewDate: datetime, full: { $lt: 3 } })
 	return !(res.length > 0)
 }
 
@@ -82,7 +82,7 @@ const insertAvailableDate = async (datetime) => {
 
 const getAvailableDates = async (date) => {
 	await connectDB()
-	const allFree = await AvailableDate.find({ full: { $lt: 1 } })
+	const allFree = await AvailableDate.find({ full: { $lt: 3 } })
 	const filtered = allFree.filter(dateObj => {
 		return dateObj.availableDate.getFullYear() === date.getFullYear() && dateObj.availableDate.getMonth() === date.getMonth() && dateObj.availableDate.getDate() === date.getDate()
 	})
@@ -101,7 +101,7 @@ const getAvailableDates = async (date) => {
 
 const markDate = async (date) => {
 	await connectDB()
-	const res = await AvailableDate.updateOne({ availableDate: date }, { full: 1 })
+	const res = await AvailableDate.updateOne({ availableDate: date }, { $inc: { full: 1 } })
 	await mongoose.disconnect()
 }
 

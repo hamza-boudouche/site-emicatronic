@@ -49,8 +49,8 @@ const submitTime = async (el) => {
 	const chosenDateDate = `${new Date(chosenDate).getFullYear()}/${new Date(chosenDate).getMonth() + 1}/${new Date(chosenDate).getDate()}`
 	const minutes = new Date(chosenDate).getMinutes() != 0 ? new Date(chosenDate).getMinutes() : ((new Date(chosenDate).getMinutes()) + "0")
 	const chosenDateTime = `${new Date(chosenDate).getHours() - 1}:${minutes}`
-	document.getElementById('chosenDateDate').innerHTML = '<span class="pre_coor">You will be interviewed on :</span><br>' +'<i class="fa fa-calendar text-dialna" aria-hidden="true"></i>' +' '+chosenDateDate
-	document.getElementById('chosenDateTime').innerHTML = '<span class="pre_coor">At :</span><br>' +'<i class="fa fa-clock-o text-dialna" aria-hidden="true"></i>'+ ' '+ chosenDateTime
+	document.getElementById('chosenDateDate').innerHTML = '<span class="pre_coor">You will be interviewed on :</span><br>' + '<i class="fa fa-calendar text-dialna" aria-hidden="true"></i>' + ' ' + chosenDateDate
+	document.getElementById('chosenDateTime').innerHTML = '<span class="pre_coor">At :</span><br>' + '<i class="fa fa-clock-o text-dialna" aria-hidden="true"></i>' + ' ' + chosenDateTime
 }
 
 const submitAll = async () => {
@@ -62,13 +62,14 @@ const submitAll = async () => {
 	const genie = document.getElementById('genie').value
 	const telephone = document.getElementById('telephone').value
 	const cellule = document.getElementById('cellule').value
+	const cellule1 = document.getElementById('cellule1').value
 	const motivation = document.getElementById('motivation').value
 
 	console.log(`name: ${lname} ${fname} --email ${email} --meeting - time: ${chosenDate} `)
 
 	if (!fname) {
 		Swal.fire({
-			icon: 'Error',
+			icon: 'error',
 			title: 'Missing info',
 			text: 'First name is required',
 			footer: '<a href="mailto:emicatronic2.emi@gmail.com">Having touble? Contact us here.</a>'
@@ -77,7 +78,7 @@ const submitAll = async () => {
 	}
 	if (!lname) {
 		Swal.fire({
-			icon: 'Error',
+			icon: 'error',
 			title: 'Missing info',
 			text: 'Last name is required',
 			footer: '<a href="mailto:emicatronic2.emi@gmail.com">Having touble? Contact us here.</a>'
@@ -86,7 +87,7 @@ const submitAll = async () => {
 	}
 	if (!email) {
 		Swal.fire({
-			icon: 'Error',
+			icon: 'error',
 			title: 'Missing info',
 			text: 'Email is required',
 			footer: '<a href="mailto:emicatronic2.emi@gmail.com">Having touble? Contact us here.</a>'
@@ -95,16 +96,16 @@ const submitAll = async () => {
 	}
 	if (!chosenDate) {
 		Swal.fire({
-			icon: 'Error',
+			icon: 'error',
 			title: 'Missing info',
 			text: 'Date and time are required',
 			footer: '<a href="mailto:emicatronic2.emi@gmail.com">Having touble? Contact us here.</a>'
 		})
 		return
 	}
-	if (!genie) {
+	if (!genie && !genie === 'Branch') {
 		Swal.fire({
-			icon: 'Error',
+			icon: 'error',
 			title: 'Missing info',
 			text: 'Branch is required',
 			footer: '<a href="mailto:emicatronic2.emi@gmail.com">Having touble? Contact us here.</a>'
@@ -113,25 +114,34 @@ const submitAll = async () => {
 	}
 	if (!telephone) {
 		Swal.fire({
-			icon: 'Error',
+			icon: 'error',
 			title: 'Missing info',
 			text: 'Phone number is required',
 			footer: '<a href="mailto:emicatronic2.emi@gmail.com">Having touble? Contact us here.</a>'
 		})
 		return
 	}
-	if (!cellule) {
+	if (!cellule && !cellule === 'First choice of a team to join') {
 		Swal.fire({
-			icon: 'Error',
+			icon: 'error',
 			title: 'Missing info',
-			text: 'Team is required',
+			text: 'First team is required',
+			footer: '<a href="mailto:emicatronic2.emi@gmail.com">Having touble? Contact us here.</a>'
+		})
+		return
+	}
+	if (!cellule1 && !cellule1 === 'Second choice of a team to join') {
+		Swal.fire({
+			icon: 'error',
+			title: 'Missing info',
+			text: 'Second team is required',
 			footer: '<a href="mailto:emicatronic2.emi@gmail.com">Having touble? Contact us here.</a>'
 		})
 		return
 	}
 	if (!motivation) {
 		Swal.fire({
-			icon: 'Error',
+			icon: 'error',
 			title: 'Missing info',
 			text: 'Motivation is required',
 			footer: '<a href="mailto:emicatronic2.emi@gmail.com">Having touble? Contact us here.</a>'
@@ -147,6 +157,7 @@ const submitAll = async () => {
 		genie,
 		telephone,
 		cellule,
+		cellule1,
 		motivation
 	}
 
@@ -159,14 +170,14 @@ const submitAll = async () => {
 	const data = await res.json()
 	if (data.success === true) {
 		Swal.fire({
-			icon: 'Success',
+			icon: 'success',
 			title: 'Operation successful',
-			text: 'Check your email',
+			text: 'You have successfully completed the first part of the registration process. Don\'t forget to <b>check</b> your email and validate it by clicking on the validation link (expires in 30 minutes)',
 			footer: '<a href="mailto:emicatronic2.emi@gmail.com">Having touble? Contact us here.</a>'
 		})
 	} else {
 		Swal.fire({
-			icon: 'Error',
+			icon: 'error',
 			title: 'Operation failed',
 			text: data.message,
 			footer: '<a href="mailto:emicatronic2.emi@gmail.com">Having touble? Contact us here.</a>'
