@@ -81,8 +81,7 @@ const template3 = (candidate, datetime) => {
 <br>
 <a href=${link}><img src="https://i.imgur.com/F3gvfU2.png" alt="click here" style="width: 20%;"></a>
 </div>
-</body>
-
+</body
 </html>`)
 }
 
