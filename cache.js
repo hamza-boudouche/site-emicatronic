@@ -1,9 +1,9 @@
 const redis = require('async-redis')
 
 const writeToCalendarTemp = async (client, candidate, chosenDate) => {
-	if (getValue(client, `${chosenDate} - 1`)) {
-		if (getValue(client, `${chosenDate} - 2`)) {
-			if (getValue(client, `${chosenDate} - 3`)) {
+	if (await getValue(client, `${chosenDate} - 1`)) {
+		if (await getValue(client, `${chosenDate} - 2`)) {
+			if (await getValue(client, `${chosenDate} - 3`)) {
 				return false
 			} else {
 				await client.set(`${chosenDate} - 3`, `${candidate.fname}-${candidate.lname}`, 'EX', 60 * 30);
