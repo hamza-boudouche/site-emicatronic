@@ -48,7 +48,7 @@ const submitTime = async (el) => {
 	console.log(chosenDate)
 	const chosenDateDate = `${new Date(chosenDate).getFullYear()}/${new Date(chosenDate).getMonth() + 1}/${new Date(chosenDate).getDate()}`
 	const minutes = new Date(chosenDate).getMinutes() != 0 ? new Date(chosenDate).getMinutes() : ((new Date(chosenDate).getMinutes()) + "0")
-	const chosenDateTime = `${new Date(chosenDate).getHours() - 1}:${minutes}`
+	const chosenDateTime = `${new Date(chosenDate).getHours() == 0 ? 23 : new Date(chosenDate).getHours() - 1}:${minutes}`
 	document.getElementById('chosenDateDate').innerHTML = '<span class="pre_coor">You will be interviewed on :</span><br>' + '<i class="fa fa-calendar text-dialna" aria-hidden="true"></i>' + ' ' + chosenDateDate
 	document.getElementById('chosenDateTime').innerHTML = '<span class="pre_coor">At :</span><br>' + '<i class="fa fa-clock-o text-dialna" aria-hidden="true"></i>' + ' ' + chosenDateTime
 }
