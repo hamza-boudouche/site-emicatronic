@@ -22,6 +22,22 @@ body {
 
     padding: 10px;
 }
+.bton_fb {
+ 
+ background:#1877F2;
+}
+.bton_wt {
+ 
+    background:#25D366;
+   }
+.bton_tw {
+ 
+    background:#1DA1F2;
+   }
+   .bton_lk {
+ 
+    background:#0A66C2;
+   }
 .btn-dialna {
     color: #fff;
     background-color: #021c4e;
@@ -104,9 +120,7 @@ nav .active a{
 .carousel-caption p {
     color: rgba(255,255,255,.55);
 }
-.carousel-caption p:after {
-content:'...';
-}
+
 
 .nav-item {
   font-size: 1vw;
@@ -429,6 +443,11 @@ display:none;
 		width:90%;
 		
 	}
+    .nav-item a {
+        font-size: 15px;
+          padding:10px 5px !important;
+         margin :5px 0;
+      }
 }
 
 @media (max-width:  920px){
