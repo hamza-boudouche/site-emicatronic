@@ -22,6 +22,23 @@ const getValue = async (client, key) => {
 	return existingValue
 }
 
+const blackList = async (jwt) => {
+	const redisCredentials = {
+		host: process.env.REDIS_HOST,
+		port: process.env.REDIS_PORT
+	}
+	const redisClient = redis.createClient(redisCredentials)
+	await redisClient.set(jwt, 'blacklisted');
+}
+
+const isBlackListed = async (jwt) => {
+	const value = await getValue(jwt);
+	if (value == 'blacklisted') {
+		return true
+	}
+	return false
+}
+
 const getList = async (client, key) => {
 	const res = await client.lrange(key, 0, -1)
 	return res
@@ -52,4 +69,4 @@ async function setCache() {
 	await redisClient.set('endDate', new Date(2021, 9, 24));
 }
 
-module.exports = { writeToCalendarTemp, getValue, getList, setCache };
+module.exports = { writeToCalendarTemp, getValue, getList, setCache, blackList, isBlackListed };

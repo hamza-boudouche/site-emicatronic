@@ -13,7 +13,7 @@ const {
 	insertTempEmail,
 	checkEmailTemp
 } = require('./database')
-const { writeToCalendarTemp, getValue, getList } = require('./cache')
+const { writeToCalendarTemp, getValue, getList, blackList, isBlackListed } = require('./cache')
 
 const redis = require('async-redis')
 const jwt = require('jsonwebtoken')
@@ -111,25 +111,30 @@ app.post('/api/conference/', async (req, res) => {
 	}
 })
 
-app.get('/api/verify/:jwtKey', (req, res) => {
+app.get('/api/verify/:jwtKey', async (req, res) => {
 	const jwtKey = req.params['jwtKey']
-	try {
-		const { candidate, datetime } = jwt.verify(jwtKey, process.env.SECRET)
-		writeToCalendar(candidate, datetime)
-		writeToDatabase({
-			lname: candidate.lname,
-			fname: candidate.fname,
-			email: candidate.email,
-			interviewDate: datetime,
-			genie: candidate.genie,
-			telephone: candidate.telephone,
-			cellule: candidate.cellule,
-			motivation: candidate.motivation,
-		}, datetime)
+	if (await isBlackListed(jwtKey)) {
 		res.sendFile('./email_verified.html', { root: __dirname })
-	} catch (error) {
-		console.log(error)
-		res.sendFile('./email_not_verified.html', { root: __dirname })
+	} else {
+		try {
+			const { candidate, datetime } = jwt.verify(jwtKey, process.env.SECRET)
+			blackList(jwtKey)
+			writeToCalendar(candidate, datetime)
+			writeToDatabase({
+				lname: candidate.lname,
+				fname: candidate.fname,
+				email: candidate.email,
+				interviewDate: datetime,
+				genie: candidate.genie,
+				telephone: candidate.telephone,
+				cellule: candidate.cellule,
+				motivation: candidate.motivation,
+			}, datetime)
+			res.sendFile('./email_verified.html', { root: __dirname })
+		} catch (error) {
+			console.log(error)
+			res.sendFile('./email_not_verified.html', { root: __dirname })
+		}
 	}
 })
 
