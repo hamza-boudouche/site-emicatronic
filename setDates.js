@@ -1,7 +1,7 @@
 const { insertAvailableDate } = require("./database");
 const { setCache } = require("./cache");
 
-setCache();
+// setCache();
 
 (async () => {
 	//vendredi
