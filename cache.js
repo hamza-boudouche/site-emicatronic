@@ -32,7 +32,12 @@ const blackList = async (jwt) => {
 }
 
 const isBlackListed = async (jwt) => {
-	const value = await getValue(jwt);
+	const redisCredentials = {
+		host: process.env.REDIS_HOST,
+		port: process.env.REDIS_PORT
+	}
+	const redisClient = redis.createClient(redisCredentials)
+	const value = await getValue(redisClient, jwt);
 	if (value == 'blacklisted') {
 		return true
 	}
